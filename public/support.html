@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="supportstyle.css">
+    <title>Asistente IA - Farma Gex</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .chat-container {
+            width: 100%;
+            max-width: 600px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 20px;
+        }
+
+        .messages {
+            max-height: 400px;
+            overflow-y: auto;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        .message {
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .message.user {
+            background-color: #d1e7ff;
+            text-align: right;
+        }
+
+        .message.ai {
+            background-color: #e8e8e8;
+            text-align: left;
+        }
+
+        .input-container {
+            display: flex;
+        }
+
+        .input-container input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px 0 0 5px;
+            border: 1px solid #ccc;
+        }
+
+        .input-container button {
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 0 5px 5px 0;
+        }
+
+        .input-container button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<header class="header">
+    <div class="container">
+    <div class="btn-menu">
+        <label for="btn-menu">☰</label>
+    </div>
+    <div class="logo">
+        <a href="index.html"><h1>Farmagex</h1></a>
+    </div>
+        <nav class="menu">
+            <a href="/Inicio/index.html">Inicio</a>
+            <a href="/Inicio/sobrenosotros.html">Sobre Nosotros</a>
+            <a href="/faq/faq.html">Preguntas</a>
+            <a href="/Services/socios.html">Contacto</a>
+        </nav>
+    </div>
+    
+</header>
+<body>
+    <br><br><br><br><br>
+    <div class="chat-container">
+        <h2>Asistente de Farma Gex</h2>
+        <div class="messages" id="messages"></div>
+        <div class="input-container">
+            <input type="text" id="userInput" placeholder="Haz una pregunta..." />
+            <button onclick="sendMessage()">Enviar</button>
+        </div>
+    </div>
+
+    <script>
+        const messagesContainer = document.getElementById("messages");
+
+        function addMessage(content, sender) {
+            const message = document.createElement("div");
+            message.className = "message " + sender;
+            message.textContent = content;
+            messagesContainer.appendChild(message);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+
+        function sendMessage() {
+            const input = document.getElementById("userInput");
+            const userText = input.value.trim();
+            if (userText === "") return;
+
+            addMessage(userText, "user");
+            input.value = "server.js";
+
+            // Simulación de IA - Aquí debes integrar el backend que responda con IA
+            fetch('/get-response', { 
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ message: userText })
+            })
+            .then(response => response.json())
+            .then(data => addMessage(data.response, "ai"))
+            .catch(() => addMessage("Lo siento, no puedo responder en este momento.", "ai"));
+        }
+    </script>
+     <footer class="footer-section">
+        <div class="wrap-footer-section">
+            <div class="wrap-social-logos">
+                <ul>
+                    <li>
+                        <a href="https://web.facebook.com/" target="_blank">
+                            <img src="../imagenes/landing/facebook" class="social-logo">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/divine._spark?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">
+                            <img src="../imagenes/landing/instagram" class="social-logo">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/" target="_blank">
+                            <img src="../imagenes/landing/twitter" class="social-logo">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.youtube.com/" target="_blank">
+                            <img src="../imagenes/landing/youtube" class="social-logo">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="menu-footer-section">
+            <div class="wrap-menu-footer-section">
+                <ul>
+                    <li><a href=""></a>Inicio</li>
+                    <li><a href=""></a>Servicios</li>
+                    <li><a href=""></a>blog</li>
+                    <li><a href=""></a>Blog</li>
+                    <li><a href=""></a>Contacto</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="menu-footer-section">
+            <div class="footer-creds">
+                <p>©copyright 2024 - Divine Spark - Todos los derechos reservados.</p>
+            </div>
+        </div>
+
+    </footer>
+</body>
+</html>
+

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Shop/estilo.css">
+    <title>Migraña</title>
+</head>
+<br><br><br>
+<body>
+    <!-- Encabezado -->
+    <header class="header">
+		<div class="container">
+		<div class="btn-menu">
+			<label for="btn-menu">☰</label>
+		</div>
+			<div class="logo">
+				<a href="../Inicio/index.html"><h1>Farmagex</h1></a>
+			</div>
+			<nav class="menu">
+				<a href="../Inicio/index.html">Inicio</a>
+				<a href="../Inicio/sobrenosotros.html">Sobre Nosotros</a>
+				<a href="../faq/faq.html">Preguntas</a>
+				<a href="../Services/socios.html">Contacto</a>
+			</nav>
+		</div>
+		
+	</header>
+    <input type="checkbox" id="btn-menu">
+	<div class="container-menu">
+		<div class="cont-menu">
+            <h1>Catálogo</h1>
+			<nav>
+				<a href="../Shop/index.html">Principal</a>
+				<a href="../Shop/paginas/gripe.html">Gripe</a>
+				<a href="../Shop/paginas/dermatitis.html">Dermatitis</a>
+				<a href="../Shop/paginas/amigdalitis.html">Amigdalitis</a>
+				<a href="../Shop/paginas/sinusitis.html">Sinusitis</a>
+			</nav>
+			<label for="btn-menu">✖️</label>
+		</div>
+	</div>
+    </header>
+
+    <section class="contenido">
+        <div class="mostrador" id="mostrador">
+            <div class="fila">
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img src="img/telekast.jpg" alt="">
+                    </div>
+                    <p class="descripcion">TELEKAST 10MG/30TABLS.
+                    </p>
+                    <span class="precio">$ 1.300.00</span>
+                </div>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img src="img/florelix.jpg" alt="">
+                    </div>
+                    <p class="descripcion" id> FLORELIX 120 ML JARABE
+                    </p>
+                    <span class="precio">$576.05</span>
+                </div>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img src="img/rowachol.jpg" alt="">
+                    </div>
+                    <p class="descripcion">ROWACHOL CAPS/TR10(10X10)
+
+                    </p>
+                    <span class="precio">$130.04</span>
+                </div>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img src="img/nitrenol.jpg" alt="">
+                    </div>
+                    <p class="descripcion">NITRENOL 20/50/12.5 MG 30</p>
+                    <span class="precio">$1,000.00</span>
+                </div>
+            </div>
+            <br><br><br>
+            <div class="fila">
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img src="img/pregagesic.jpg" alt="">
+                    </div>
+                    <p class="descripcion">PREGAGESIC 75 MG 30 CAPSULAS
+                    </p>
+                    <span class="precio">$1,735.05</span>
+                </div>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img src="img/glutamical.jpg" alt="">
+                    </div>
+                    <p class="descripcion">GLUTAMICAL M4 850/4 MG 30</p>
+                    <span class="precio">$1,150.00</span>
+                </div>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img src="img/novo.jpg" alt="">
+                    </div>
+                    <p class="descripcion">NOVO ALERPRIV 5 MG 10 COMPRIMIDOS
+                    </p>
+                    <span class="precio">$587.85</span>
+                </div>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img src="img/fexionel.jpg" alt="">
+                    </div>
+                    <p class="descripcion">FEXIONEL 500MG/30COMPS.  
+                     </p>
+                    <span class="precio">$ 1,864.04</span>
+                </div>
+            </div> 
+        </div>
+        <!-- CONTENEDOR DEL ITEM SELECCIONADO -->
+        <div class="seleccion" id="seleccion">
+            <div class="cerrar" onclick="cerrar()">
+                &#x2715
+            </div>
+            <div class="info">
+                <img src="img/telekast.jpg" alt="" id="img">
+                <h2 id="modelo">telekast</h2>
+                <p id="descripcion">TELEKAST 10MG/30TABLS.</p>
+
+                <span class="precio" id="precio">$ 130</span>
+
+                <div class="fila">
+                    <div class="size">
+                        <label for="">CANTIDAD</label>
+                        <select name="" id="">
+                            <option value="">1</option>
+                            <option value="">2</option>
+                            <option value="">5</option>
+                            <option value="">7</option>
+                        </select>
+                    </div>
+                    <button>AGREGAR AL CARRITO</button>
+                </div>
+            </div>
+        </div>
+    </section>
+<br><br><br><br><br>
+    <footer class="footer-section">
+        <div class="wrap-footer-section">
+            <div class="wrap-social-logos">
+                <ul>
+                    <li>
+                        <a href="https://web.facebook.com/" target="_blank">
+                            <img src="../imagenes/landing/facebook" class="social-logo">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/" target="_blank">
+                            <img src="../imagenes/landing/instagram" class="social-logo">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/" target="_blank">
+                            <img src="../imagenes/landing/twitter" class="social-logo">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.youtube.com/" target="_blank">
+                            <img src="../imagenes/landing/youtube" class="social-logo">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    
+        <div class="menu-footer-section">
+            <div class="wrap-menu-footer-section">
+                <ul>
+                    <li><a href=""></a>Inicio</li>
+                    <li><a href=""></a>Servicios</li>
+                    <li><a href=""></a>Quienes Somos</li>
+                    <li><a href=""></a>Blog</li>
+                    <li><a href=""></a>Contacto</li>
+                </ul>
+            </div>
+        </div>
+    
+        <div class="menu-footer-section">
+            <div class="footer-creds">
+                <p>©copyright 2024 - Divine Spark - Todos los derechos reservados.</p>
+            </div>
+        </div>
+    
+    </footer>
+
+    <script src="script.js"></script>
+
+    
+</body>
+</html>
