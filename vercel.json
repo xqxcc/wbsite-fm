@@ -3,3 +3,7 @@
     { "source": "/(.*)", "destination": "/" }
   ]
 }
+
+git add .
+git commit -m "Forzando nuevo despliegue en Vercel"
+git push origin main
