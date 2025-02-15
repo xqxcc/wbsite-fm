@@ -168,7 +168,7 @@ display: none;
 
 .hero-section{
     height: 90vh;
-    background: url(../imagenes/fondo\ landing.jpeg);
+    background: url(https://farmagex.vercel.app/imagenes/fondo\ landing.jpeg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
